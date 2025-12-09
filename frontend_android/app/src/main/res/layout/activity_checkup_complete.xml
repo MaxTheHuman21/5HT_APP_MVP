@@ -17,7 +17,7 @@
             android:id="@+id/imgSuccess"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_launcher_foreground"
+            android:src="@drawable/app_logo"
             android:background="@drawable/bg_button_primary"
             android:backgroundTint="#E0F7FA"
             app:layout_constraintTop_toTopOf="parent"

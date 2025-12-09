@@ -82,18 +82,33 @@
                 android:textColor="@color/text_secondary"
                 android:layout_marginTop="8dp"/>
 
-            <TextView
-                android:id="@+id/tvStressValue"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_circle_stress"
-                android:text="3/5"
-                android:gravity="center"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:textColor="#FF8A80"
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="24dp">
+
+                <ProgressBar
+                    android:id="@+id/progressStressCircle"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:indeterminate="false"
+                    android:max="5"
+                    android:progress="3"
+                    android:progressDrawable="@drawable/circular_progress_red"
+                    android:background="@null"/>
+
+                <TextView
+                    android:id="@+id/tvStressValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="3/5"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF8A80"/>
+            </FrameLayout>
 
             <SeekBar
                 android:id="@+id/seekBarStress"

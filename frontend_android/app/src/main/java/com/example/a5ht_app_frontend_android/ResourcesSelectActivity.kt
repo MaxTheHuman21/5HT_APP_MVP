@@ -1,6 +1,7 @@
 package com.example.a5ht_app_frontend_android
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RadioButton
@@ -11,18 +12,23 @@ import androidx.cardview.widget.CardView
 
 class ResourcesSelectActivity : AppCompatActivity() {
 
+    // 1. Declaramos las variables a nivel de clase para usarlas en las funciones
     private lateinit var rbVisual: RadioButton
     private lateinit var rbAuditivo: RadioButton
     private lateinit var rbMeditacion: RadioButton
+
+    private lateinit var cardVisual: CardView
+    private lateinit var cardAuditivo: CardView
+    private lateinit var cardMeditacion: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resources_select)
 
-        // Referencias
-        val cardVisual = findViewById<CardView>(R.id.cardVisual)
-        val cardAuditivo = findViewById<CardView>(R.id.cardAuditivo)
-        val cardMeditacion = findViewById<CardView>(R.id.cardMeditacion)
+        // 2. Inicializamos las referencias
+        cardVisual = findViewById(R.id.cardVisual)
+        cardAuditivo = findViewById(R.id.cardAuditivo)
+        cardMeditacion = findViewById(R.id.cardMeditacion)
 
         rbVisual = findViewById(R.id.rbVisual)
         rbAuditivo = findViewById(R.id.rbAuditivo)
@@ -33,14 +39,13 @@ class ResourcesSelectActivity : AppCompatActivity() {
         val btnClose = findViewById<ImageView>(R.id.btnClose)
         val btnBack = findViewById<ImageView>(R.id.btnBack)
 
-        // Lógica de Selección (Solo uno a la vez)
+        // 3. Listeners de Clic (Lógica de Selección)
         cardVisual.setOnClickListener { selectOption(1) }
         cardAuditivo.setOnClickListener { selectOption(2) }
         cardMeditacion.setOnClickListener { selectOption(3) }
 
-        // Navegación -> VISTA FINAL (Paso 7)
+        // Navegación -> VISTA FINAL
         btnFinish.setOnClickListener {
-            // Ir a la pantalla de "Registro Completado"
             val intent = Intent(this, CheckupCompleteActivity::class.java)
             startActivity(intent)
         }
@@ -59,8 +64,30 @@ class ResourcesSelectActivity : AppCompatActivity() {
     }
 
     private fun selectOption(option: Int) {
+        // Actualizar RadioButtons
         rbVisual.isChecked = (option == 1)
         rbAuditivo.isChecked = (option == 2)
         rbMeditacion.isChecked = (option == 3)
+
+        // Actualizar Colores de Fondo (Feedback Visual)
+        updateCardColors(option)
+    }
+
+    private fun updateCardColors(selectedOption: Int) {
+        // Color normal (Blanco) y Color seleccionado (Morado muy suave)
+        val colorNormal = Color.WHITE
+        val colorSelected = Color.parseColor("#F3E5F5") // Tono lila suave
+
+        // Reseteamos todos a blanco primero
+        cardVisual.setCardBackgroundColor(colorNormal)
+        cardAuditivo.setCardBackgroundColor(colorNormal)
+        cardMeditacion.setCardBackgroundColor(colorNormal)
+
+        // Pintamos solo el seleccionado
+        when (selectedOption) {
+            1 -> cardVisual.setCardBackgroundColor(colorSelected)
+            2 -> cardAuditivo.setCardBackgroundColor(colorSelected)
+            3 -> cardMeditacion.setCardBackgroundColor(colorSelected)
+        }
     }
 }
