@@ -1,0 +1,10 @@
+com/_HTAPP/backend/model/RegistroDiario.class
+com/_HTAPP/backend/BackendApplication.class
+com/_HTAPP/backend/repository/RegistroDiarioRepository.class
+com/_HTAPP/backend/service/AuthService.class
+com/_HTAPP/backend/config/SecurityConfig.class
+com/_HTAPP/backend/model/Usuario.class
+com/_HTAPP/backend/dto/AuthRequest.class
+com/_HTAPP/backend/dto/RegistroChequeoRequest.class
+com/_HTAPP/backend/repository/UsuarioRepository.class
+com/_HTAPP/backend/controller/AuthController.class

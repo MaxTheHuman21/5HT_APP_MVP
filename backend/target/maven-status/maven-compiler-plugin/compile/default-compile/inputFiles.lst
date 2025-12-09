@@ -1,0 +1,10 @@
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/BackendApplication.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/config/SecurityConfig.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/controller/AuthController.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/dto/AuthRequest.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/dto/RegistroChequeoRequest.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/model/RegistroDiario.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/model/Usuario.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/repository/RegistroDiarioRepository.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/repository/UsuarioRepository.java
+/Users/edgarmoralesgarcia/Desktop/backend/src/main/java/com/_HTAPP/backend/service/AuthService.java
